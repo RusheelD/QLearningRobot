@@ -3,6 +3,9 @@ from random import *
 import pyglet
 
 
+NUM_PRE_VISUAL_SUCCESSES = 7500
+
+
 class Robot:
     alpha = 0.1
     gamma = 0.6
@@ -277,7 +280,7 @@ class UI:
     #         f.write(Robot.q_table)
 
     def run(self):
-        while (Robot.gen < 75000):
+        while (Robot.gen < NUM_PRE_VISUAL_SUCCESSES):
             self.update(0)
             if self.warehouse.done():
                 print(Robot.gen)
